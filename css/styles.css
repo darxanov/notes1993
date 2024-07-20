@@ -3,106 +3,134 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
-    background: #f5f8fa;
-    color: #14171a;
+    background: #e9eff1; /* Light gray background */
+    color: #333; /* Dark text color for better readability */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     height: 100vh;
     overflow: hidden;
+    transition: background-color 0.3s ease;
 }
 
 h1, h2, h3 {
-    color: #1da1f2;
+    color: #1da1f2; /* Twitter blue */
 }
 
+/* Input Fields */
 input[type="text"], textarea {
-    border: 1px solid #ccd6dd;
-    border-radius: 4px;
-    padding: 10px;
+    border: 1px solid #ccc; /* Light gray border */
+    border-radius: 8px; /* Rounded corners for a modern look */
+    padding: 12px;
     margin: 10px 0;
     width: 100%;
-    max-width: 400px;
-    transition: border-color 0.3s ease;
-    background-color: rgba(255, 255, 255, 0.6);
+    max-width: 450px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white background */
 }
 
 input[type="text"]:focus, textarea:focus {
-    border-color: #1da1f2;
+    border-color: #1da1f2; /* Highlight border on focus */
     outline: none;
-    background-color: rgba(255, 255, 255, 1);
+    background-color: #fff; /* Solid white background on focus */
+    box-shadow: 0 0 10px rgba(29, 161, 242, 0.2); /* Subtle shadow effect */
 }
 
 input[type="button"], input[type="submit"] {
-    background-color: #1da1f2;
+    background-color: #1da1f2; /* Twitter blue */
     border: none;
-    border-radius: 4px;
+    border-radius: 8px; /* Rounded corners */
     color: white;
-    padding: 10px 20px;
+    padding: 12px 24px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.2s ease;
     margin: 5px 0;
 }
 
 input[type="button"]:hover, input[type="submit"]:hover {
-    background-color: #0d95e8;
+    background-color: #0d95e8; /* Darker blue on hover */
+    transform: translateY(-2px); /* Lift effect on hover */
 }
 
 textarea {
     resize: none;
-    height: 100px;
+    height: 120px; /* Increased height for better user experience */
 }
 
 /* Notes Container Styles */
 #notesContainer .note {
-    background: rgba(255, 255, 255, 0.9);
-    border-radius: 4px;
-    padding: 15px;
+    background: rgba(255, 255, 255, 0.95); /* Almost opaque white background */
+    border-radius: 8px; /* Rounded corners */
+    padding: 20px;
     margin: 15px 0;
     width: 100%;
     max-width: 500px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Larger shadow for a floating effect */
     transition: transform 0.3s ease, background 0.3s ease;
     position: relative;
     overflow: hidden;
 }
 
 #notesContainer .note:hover {
-    transform: scale(1.03);
-    background: rgba(255, 255, 255, 1);
+    transform: scale(1.02); /* Slight scale effect on hover */
+    background: rgba(255, 255, 255, 1); /* Solid white background on hover */
 }
 
+/* Note Content */
 #notesContainer .note-content {
     font-size: 1.1em;
-    color: #14171a;
+    color: #333; /* Darker text color */
+    line-height: 1.5; /* Improve readability */
 }
 
 #notesContainer .note-details {
     font-size: 0.9em;
-    color: rgba(20, 23, 26, 0.6);
+    color: rgba(51, 51, 51, 0.7); /* Light gray text for details */
     position: absolute;
-    bottom: 10px;
-    right: 10px;
+    bottom: 15px;
+    right: 15px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Clean font for details */
 }
 
-#notesContainer .note-content p {
-    margin: 0;
-    padding: 0;
+/* User Info Styling */
+.note-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
 }
 
+.note-header .name {
+    font-weight: bold;
+    color: #333;
+}
+
+.note-header .username {
+    color: #1da1f2; /* Twitter blue for username */
+    font-style: italic;
+}
+
+/* Date and Time Styling */
+.note-header .timestamp {
+    font-size: 0.8em;
+    color: #999; /* Light gray color for timestamps */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Clean font for timestamp */
+}
+
+/* Overlay Effect */
 #notesContainer .note-content::before {
     content: '';
     position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: rgba(29, 161, 242, 0.2);
-    filter: blur(100px);
+    top: -60%;
+    left: -60%;
+    width: 180%;
+    height: 180%;
+    background: rgba(29, 161, 242, 0.1); /* Light blue overlay */
+    filter: blur(80px); /* Blurred background effect */
     z-index: -1;
 }
 
+/* End Session Options */
 #endSessionOptions {
     display: flex;
     flex-direction: column;
@@ -112,4 +140,55 @@ textarea {
 
 #endSessionOptions input[type="button"] {
     margin: 5px 0;
+}
+
+/* Media Queries for Responsiveness */
+
+/* Tablets and larger phones */
+@media (max-width: 768px) {
+    input[type="text"], textarea {
+        max-width: 90%; /* Adjust width for smaller screens */
+    }
+
+    #notesContainer .note {
+        max-width: 90%; /* Adjust note width for smaller screens */
+        padding: 15px; /* Adjust padding for smaller screens */
+    }
+
+    #notesContainer .note-content {
+        font-size: 1em; /* Adjust font size for better readability */
+    }
+
+    #notesContainer .note-details {
+        font-size: 0.8em; /* Adjust font size for better readability */
+    }
+}
+
+/* Phones */
+@media (max-width: 480px) {
+    body {
+        height: auto; /* Allow scrolling on small screens */
+        padding: 20px; /* Add padding for better spacing */
+    }
+
+    input[type="text"], textarea {
+        max-width: 100%; /* Full width for input fields */
+    }
+
+    #notesContainer .note {
+        max-width: 100%; /* Full width for notes container */
+        padding: 10px; /* Adjust padding for smaller screens */
+    }
+
+    #notesContainer .note-content {
+        font-size: 0.9em; /* Further reduce font size for smaller screens */
+    }
+
+    #notesContainer .note-details {
+        font-size: 0.7em; /* Further reduce font size for smaller screens */
+    }
+
+    input[type="button"], input[type="submit"] {
+        padding: 10px 15px; /* Adjust padding for smaller buttons */
+    }
 }
