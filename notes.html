@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <h1>Welcome</h1>
+    <p id="welcomeMessage"></p>
+    <h2>Enter your notes:</h2>
+    <textarea id="notes" rows="10" cols="30"></textarea>
+    <input type="button" id="submit_notes" value="Submit" onclick="submitNote()">
+    
+    <h3>Your Notes:</h3>
+    <div id="notesContainer"></div>
+    
+    <input type="button" value="End the Session" onclick="endSession()">
+    <div id="endSessionOptions" style="display:none;">
+        <input type="button" value="Download Notes" onclick="downloadNotes()">
+        <input type="button" value="Start New Session" onclick="startNewSession()">
+        <input type="button" value="Go to Main Page" onclick="goToMainPage()">
+    </div>
+    
+    <script src="js/notesScript.js"></script>
+</body>
+</html>

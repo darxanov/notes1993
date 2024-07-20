@@ -1,0 +1,115 @@
+/* General Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f5f8fa;
+    color: #14171a;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+h1, h2, h3 {
+    color: #1da1f2;
+}
+
+input[type="text"], textarea {
+    border: 1px solid #ccd6dd;
+    border-radius: 4px;
+    padding: 10px;
+    margin: 10px 0;
+    width: 100%;
+    max-width: 400px;
+    transition: border-color 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+input[type="text"]:focus, textarea:focus {
+    border-color: #1da1f2;
+    outline: none;
+    background-color: rgba(255, 255, 255, 1);
+}
+
+input[type="button"], input[type="submit"] {
+    background-color: #1da1f2;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 5px 0;
+}
+
+input[type="button"]:hover, input[type="submit"]:hover {
+    background-color: #0d95e8;
+}
+
+textarea {
+    resize: none;
+    height: 100px;
+}
+
+/* Notes Container Styles */
+#notesContainer .note {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 4px;
+    padding: 15px;
+    margin: 15px 0;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, background 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+#notesContainer .note:hover {
+    transform: scale(1.03);
+    background: rgba(255, 255, 255, 1);
+}
+
+#notesContainer .note-content {
+    font-size: 1.1em;
+    color: #14171a;
+}
+
+#notesContainer .note-details {
+    font-size: 0.9em;
+    color: rgba(20, 23, 26, 0.6);
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+
+#notesContainer .note-content p {
+    margin: 0;
+    padding: 0;
+}
+
+#notesContainer .note-content::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: rgba(29, 161, 242, 0.2);
+    filter: blur(100px);
+    z-index: -1;
+}
+
+#endSessionOptions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+#endSessionOptions input[type="button"] {
+    margin: 5px 0;
+}
